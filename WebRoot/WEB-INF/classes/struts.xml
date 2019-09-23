@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC   
+     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+     "http://struts.apache.org/dtds/struts-2.0.dtd">
+     
+     
+<struts>
+    <package name="liu" extends="struts-default">
+        <global-results>											<!-- 信息显示 -->
+            <result name="succeed">/common/succeed.jsp</result>
+            <result name="msg">/common/msg.jsp</result>
+            <result name="msg1">/common/msg1.jsp</result>
+        </global-results>
+        
+        <action name="upload" class="com.util.upload" method="upload"> <!-- 上传图片 -->
+             <result name="success">/upload/upload_re.jsp</result>
+        </action>
+        
+        <action name="index" class="indexAction" method="index"> <!-- 主页 -->
+            <result name="success">/qiantai/index.jsp</result>
+        </action>
+        
+        <action name="toupdate_*" class="{1}Action" method="toUpdate"> <!-- 后台进入修改 -->
+        	<result name="success">/admin/{1}/{1}Update.jsp</result>
+        </action>
+        
+        <action name="update_*" class="{1}Action" method="update"> <!-- 后台修改 -->
+        	
+        </action>
+        
+        <action name="userReg" class="userAction" method="userReg"> <!-- 用户注册 -->
+        </action>
+        <action name="userLogin" class="userAction" method="userLogin"> <!-- 用户登录 -->
+        </action>
+        <action name="userLogout" class="userAction" method="userLogout"> <!-- 用户退出 -->
+        </action>
+        <action name="userEdit" class="userAction" method="userEdit"> <!-- 用户信息修改 -->
+        </action>
+        <action name="userMana" class="userAction" method="userMana"> <!-- 后台用户信息 -->
+             <result name="success">/admin/user/userMana.jsp</result>
+        </action>
+        <action name="userDel" class="userAction" method="userDel"> <!-- 后台删除用户 -->
+        </action>
+
+        <action name="catelogAdd" class="catelogAction" method="catelogAdd">   <!-- 后台图书类别添加 -->
+        </action>
+        <action name="catelogMana" class="catelogAction" method="catelogMana">  <!-- 后台图书类别管理 -->
+             <result name="success">/admin/catelog/catelogMana.jsp</result>
+        </action>
+        <action name="catelogDel" class="catelogAction" method="catelogDel">	<!-- 后台图书类别删除 -->
+        </action>
+        <action name="catelogAll" class="catelogAction" method="catelogAll">  <!-- 显示图书类别 -->
+             <result name="success">/qiantai/catelog/catelogAll.jsp</result>
+        </action>
+
+        <action name="goodsAdd" class="goodsAction" method="goodsAdd">	<!-- 后台图书添加 -->
+        </action>
+   
+        <action name="goodsDel" class="goodsAction" method="goodsDel"> <!-- 后台图书删除 -->
+        </action>
+        <action name="goodsMana" class="goodsAction" method="goodsMana"> <!-- 后台图书管理 -->
+            <result name="success">/admin/goods/goodsMana.jsp</result>
+        </action>
+        <action name="goodsDetailHou" class="goodsAction" method="goodsDetailHou"> <!-- 后台图书介绍 -->
+            <result name="success">/admin/goods/goodsDetailHou.jsp</result>
+        </action>
+        
+        <action name="goodsDetailQian" class="goodsAction" method="goodsDetailQian"> <!-- 通过图书类别购买 -->
+            <result name="success">/qiantai/goods/goodsDetailQian.jsp</result>
+        </action>
+        <action name="goodsByCatelog" class="goodsAction" method="goodsByCatelog"> <!-- 点击图书类别 -->
+            <result name="success">/qiantai/goods/goodsByCatelog.jsp</result>
+        </action>
+        
+        <action name="addToCart" class="buyAction" method="addToCart"> <!-- 添加到购物车 -->
+        </action>
+        <action name="myCart" class="buyAction" method="myCart"><!-- 显示购物车 -->
+            <result name="success">/qiantai/myCart/myCart.jsp</result>
+        </action>
+        <action name="orderQueren" class="buyAction" method="orderQueren"> <!-- 下一步 -->
+            <result name="success">/qiantai/order/orderQueren.jsp</result>
+        </action>
+        <action name="orderSubmit" class="buyAction" method="orderSubmit"> <!-- 提交订单 -->
+            <result name="success">/qiantai/order/orderSubmit.jsp</result>
+        </action>
+        <action name="myOrder" class="buyAction" method="myOrder"> <!-- 显示订单 -->
+            <result name="success">/qiantai/order/myOrder.jsp</result>
+        </action>
+        <action name="orderDel" class="buyAction" method="orderDel"> <!-- 删除订单 -->
+        </action>
+        <action name="orderDetail" class="buyAction" method="orderDetail"><!-- 订单明细 -->
+            <result name="success">/qiantai/order/orderDetail.jsp</result>
+        </action>  
+        
+        <action name="orderFk" class="buyAction" method="orderFk"><!-- 付款成功 -->
+       
+        </action>
+        
+        <action name="orderHdFk" class="buyAction" method="orderHdFk"> <!-- 货到付款 -->
+        
+        </action> 
+        
+              <action name="bank" class="buyAction" method="bank">	<!-- 网银付款 -->
+            <result name="success">/qiantai/order/bank.jsp</result>
+        </action> 
+ 
+     
+        
+        
+        <action name="liuyanMana" class="liuyanAction" method="liuyanMana">	<!-- 后台留言 -->
+             <result name="success">/admin/liuyan/liuyanMana.jsp</result>
+        </action>
+        <action name="liuyanAdd" class="liuyanAction" method="liuyanAdd">	<!-- 添加留言 -->
+        </action>
+        <action name="liuyanDel" class="liuyanAction" method="liuyanDel">	<!-- 后台删除留言 -->
+        </action>
+        <action name="liuyanAll" class="liuyanAction" method="liuyanAll"> <!-- 留言板 -->
+             <result name="success">/qiantai/liuyan/liuyanAll.jsp</result>
+        </action>
+        
+        <action name="liuyanAddReply" class="liuyanAction" method="liuyanAddReply"> <!-- 后台回复留言 -->
+        	
+        </action>
+        
+        <action name="commentMana" class="commentAction" method="commentMana">	<!-- 后台评论 -->
+             <result name="success">/admin/comment/commentMana.jsp</result>
+        </action>
+        <action name="commentAdd" class="commentAction" method="commentAdd"> <!-- 添加评论 -->
+        </action>
+        <action name="commentDel" class="commentAction" method="commentDel">	<!-- 后台评论删除 -->
+        </action>
+         <action name="commentReply" class="commentAction" method="commentReply"> <!-- 后台评论回复 -->
+        </action>
+     
+        
+        
+        
+         <action name="gonggaoAdd" class="gonggaoAction" method="gonggaoAdd">	<!-- 后台公告添加 -->
+        </action>
+        <action name="gonggaoDel" class="gonggaoAction" method="gonggaoDel">	<!-- 后台公告删除 -->
+        </action>
+        <action name="gonggaoMana" class="gonggaoAction" method="gonggaoMana"> <!-- 后台公告 -->
+            <result>/admin/gonggao/gonggaoMana.jsp</result>
+        </action>
+        <action name="gonggaoDetail" class="gonggaoAction" method="gonggaoDetail"> <!-- 后台公告信息 -->
+            <result>/admin/gonggao/gonggaoDetail.jsp</result>
+        </action>
+        <action name="gonggaoQian5" class="gonggaoAction" method="gonggaoQian5"> <!-- 显示公告 -->
+            <result>/qiantai/gonggao/gonggaoQian5.jsp</result>
+        </action>
+        <action name="gonggaoDetailQian" class="gonggaoAction" method="gonggaoDetailQian"> <!-- 点击公告 -->
+            <result>qiantai/gonggao/gonggaoDetailQian.jsp</result>
+        </action>
+        
+        
+        <action name="xiaoshouMine" class="xiaoshouAction" method="xiaoshouMine"> <!-- 后台订单 -->
+            <result name="success">/admin/xiaoshou/xiaoshouMine.jsp</result>
+        </action>
+      
+        <action name="shouli" class="xiaoshouAction" method="shouli"> <!-- 后台订单受理 -->
+        </action>
+    </package>
+</struts>

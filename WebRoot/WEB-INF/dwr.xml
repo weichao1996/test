@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+<dwr>
+     <allow>
+          <create creator="spring" javascript="loginService">	<!-- 采用spring实例化对象 -->
+              <param name="beanName" value="loginService"></param>
+          </create>
+          
+          <create creator="spring" javascript="catelogService">
+              <param name="beanName" value="catelogService"></param>
+          </create>
+          
+          <convert converter="bean" match="com.model.TCatelog">	<!-- 用JavaBean的命名规范服务器端  Java对象表示和序列化的JavaScript之间如何转换数据类型 -->
+              <param name="include" value="catelogId,catelogName"></param>
+          </convert>
+          
+          
+          <create creator="spring" javascript="cartService">	
+              <param name="beanName" value="cartService"></param>
+          </create>
+     </allow>
+</dwr>
